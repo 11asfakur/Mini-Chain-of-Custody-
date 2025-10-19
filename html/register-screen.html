@@ -1,0 +1,78 @@
+<div class="login-container">
+    <div class="login-box">
+        <div class="lock-icon">🔒</div>
+        <h1>Create Account</h1>
+        <p class="subtitle">Register for Chain of Custody System</p>
+        
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" id="reg-firstname" placeholder="Enter first name">
+            </div>
+            
+            <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" id="reg-lastname" placeholder="Enter last name">
+            
+            </div>
+
+        </div>
+
+        
+        <div class="form-group">
+            <label>Email *</label>
+            <input type="email" id="reg-email" placeholder="Enter email address">
+
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label>Designation *</label>
+                <input type="text" id="reg-designation" placeholder="e.g., Senior Investigator">
+            </div>
+            <div class="form-group">
+                <label>Department *</label>
+                <input type="text" id="reg-department" placeholder="e.g., Cybercrime Unit">
+            
+            </div>
+
+        </div>
+        
+        <div class="form-group">
+            <label>Role *</label>
+            <select id="reg-role">
+                <option value="">Select Role</option>
+                <option value="Investigator">Investigator</option>
+                <option value="Supervisor">Supervisor</option>
+            </select>
+
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label>Password *</label>
+                <input type="password" id="reg-password" placeholder="At least 6 characters">
+            </div>
+
+
+            <div class="form-group">
+                <label>Confirm Password *</label>
+                <input type="password" id="reg-confirm" placeholder="Re-enter password">
+            </div>
+
+        </div>
+        
+        <button onclick="handleRegister()" class="btn btn-primary btn-block">Create Account</button>
+        
+        <div class="text-center">
+            <p class="small">Already have an account? 
+                <a href="#" onclick="showLogin()">Sign In</a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
