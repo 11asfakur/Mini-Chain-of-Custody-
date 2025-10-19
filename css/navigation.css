@@ -1,0 +1,101 @@
+.app-header {
+    background-color: #2563eb;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.lock-icon-small {
+    font-size: 2rem;
+}
+
+.header-title {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.header-subtitle {
+    font-size: 0.875rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.header-right {
+    text-align: right;
+}
+
+.header-right p {
+    margin: 0.125rem 0;
+    font-size: 0.875rem;
+}
+
+.header-right .logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.75rem;
+    padding: 0;
+    margin-top: 0.25rem;
+}
+
+.app-nav {
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.app-nav .container {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.nav-btn {
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #6b7280;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    color: #2563eb;
+}
+
+.nav-btn.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-header h2 {
+    margin: 0;
+}
+
+.page-header > div {
+    display: flex;
+    gap: 0.75rem;
+}
