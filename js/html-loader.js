@@ -17,6 +17,7 @@ async function loadAllHTML() {
     
     // Load app components
 
+    await loadHTML('html/app-header.html', 'app-header');
     await loadHTML('html/app-navigation.html', 'app-navigation');
     
     
