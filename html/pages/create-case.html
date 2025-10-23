@@ -1,0 +1,48 @@
+<h2>Create New Case</h2>
+<div class="card">
+    <div class="form-group">
+        <label>Case Title *</label>
+        <input type="text" id="case-name" placeholder="Enter case title">
+    </div>
+    
+    <div class="form-group">
+        <label>Description</label>
+        <textarea id="case-details" rows="3" placeholder="Describe the case"></textarea>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label>Category *</label>
+            <select id="case-type">
+                <option value="">Select Category</option>
+                <option value="Cybercrime">Cybercrime</option>
+                <option value="Fraud">Fraud</option>
+                <option value="Theft">Theft</option>
+                <option value="Data Breach">Data Breach</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Assign To</label>
+            <select id="case-assignee">
+                <option value="">Self (default)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label>Incident Date</label>
+            <input type="date" id="case-date">
+        </div>
+        <div class="form-group">
+            <label>Incident Time</label>
+            <input type="time" id="case-time">
+        </div>
+    </div>
+    
+    <div class="form-actions">
+        <button class="btn btn-primary" onclick="createCase()">Create Case</button>
+        <button class="btn btn-secondary" onclick="showPage('cases')">Cancel</button>
+    </div>
+</div>
