@@ -19,7 +19,7 @@ async function loadAllHTML() {
 
     await loadHTML('html/app-header.html', 'app-header');
     await loadHTML('html/app-navigation.html', 'app-navigation');
-    
+    await loadHTML('html/pages/dashboard.html', 'dashboard-page');
     
     
 }
