@@ -1,0 +1,35 @@
+<h2>Upload Evidence</h2>
+<div class="card">
+    <div class="form-row">
+        <div class="form-group">
+            <label>Pick Case *</label>
+            <select id="upload-case">
+                <option value="">Choose case</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Title *</label>
+            <input type="text" id="upload-title" placeholder="e.g., Server Logs">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>Info</label>
+        <textarea id="upload-info" rows="3" placeholder="Describe evidence"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label>Pick File *</label>
+        <input type="file" id="upload-file">
+        <p class="small text-muted" id="file-info"></p>
+    </div>
+    
+    <div class="info-box">
+        <p class="small"><strong>Note:</strong> Hashes will be made automatically!</p>
+    </div>
+    
+    <div class="form-actions">
+        <button class="btn btn-primary" onclick="uploadEvidence()">Upload</button>
+        <button class="btn btn-secondary" onclick="showPage('evidence')">Cancel</button>
+    </div>
+</div>
