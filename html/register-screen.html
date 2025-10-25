@@ -1,78 +1,66 @@
-<div class="login-container">
-    <div class="login-box">
-        <div class="lock-icon">🔒</div>
+<div class="register-container">
+    <div class="register-box">  
+        <div class="auth-icon">
+            <span>🛡️</span>
+        </div>
         <h1>Create Account</h1>
-        <p class="subtitle">Register for Chain of Custody System</p>
+        <p class="subtitle">Join Chain of Custody System</p>
         
-
-        <div class="form-row">
-            <div class="form-group">
-                <label>First Name *</label>
-                <input type="text" id="reg-firstname" placeholder="Enter first name">
+        <form onsubmit="handleRegister(); return false;">
+            <div class="register-grid">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="reg-firstname" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Designation</label>
+                    <input type="text" id="reg-designation" placeholder="Detective" required>
+                </div>
             </div>
             
             <div class="form-group">
-                <label>Last Name *</label>
-                <input type="text" id="reg-lastname" placeholder="Enter last name">
+                <label>Email</label>
+                <div class="input-with-icon">
+                    <input type="email" id="reg-email" placeholder="Enter your email" required>
+                </div>
+            </div>
             
-            </div>
-
-        </div>
-
-        
-        <div class="form-group">
-            <label>Email *</label>
-            <input type="email" id="reg-email" placeholder="Enter email address">
-
-        </div>
-        
-        <div class="form-row">
             <div class="form-group">
-                <label>Designation *</label>
-                <input type="text" id="reg-designation" placeholder="e.g., Senior Investigator">
+                <label>Password</label>
+                <div class="input-with-icon">
+                    <input type="password" id="reg-password" placeholder="Create a password" required>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Department *</label>
-                <input type="text" id="reg-department" placeholder="e.g., Cybercrime Unit">
             
+            <div class="role-selection">
+                <label>Select Role</label>
+                <div class="role-options">
+                    <div class="role-option">
+                        <input type="radio" id="role-investigator" name="role" value="investigator" checked>
+                        <label for="role-investigator" class="role-card">
+                            <div class="role-icon">🔍</div>
+                            <div class="role-name">Investigator</div>
+                        </label>
+                    </div>
+                    
+                    <div class="role-option">
+                        <input type="radio" id="role-officer" name="role" value="officer">
+                        <label for="role-officer" class="role-card">
+                            <div class="role-icon">👮</div>
+                            <div class="role-name">Officer</div>
+                        </label>
+                    </div>
+                </div>
             </div>
-
-        </div>
+            
+            <button type="submit" class="auth-btn">
+                Create Account →
+            </button>
+        </form>
         
-        <div class="form-group">
-            <label>Role *</label>
-            <select id="reg-role">
-                <option value="">Select Role</option>
-                <option value="Investigator">Investigator</option>
-                <option value="Supervisor">Supervisor</option>
-            </select>
-
+        <div class="auth-footer">
+            <p>Already have an account? <a href="#" onclick="showLogin(); return false;">Login</a></p>
         </div>
-        
-        <div class="form-row">
-            <div class="form-group">
-                <label>Password *</label>
-                <input type="password" id="reg-password" placeholder="At least 6 characters">
-            </div>
-
-
-            <div class="form-group">
-                <label>Confirm Password *</label>
-                <input type="password" id="reg-confirm" placeholder="Re-enter password">
-            </div>
-
-        </div>
-        
-        <button onclick="handleRegister()" class="btn btn-primary btn-block">Create Account</button>
-        
-        <div class="text-center">
-            <p class="small">Already have an account? 
-                <a href="#" onclick="showLogin()">Sign In</a>
-
-            </p>
-
-        </div>
-
     </div>
-
 </div>
