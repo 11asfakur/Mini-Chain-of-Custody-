@@ -20,6 +20,10 @@ async function loadAllHTML() {
     await loadHTML('html/app-header.html', 'app-header');
     await loadHTML('html/app-navigation.html', 'app-navigation');
     await loadHTML('html/pages/dashboard.html', 'dashboard-page');
+    await loadHTML('html/pages/cases-list.html', 'cases-page');
+    await loadHTML('html/pages/create-case.html', 'create-case-page');
+    await loadHTML('html/pages/evidence-list.html', 'evidence-page');
+    await loadHTML('html/pages/upload-evidence.html', 'upload-evidence-page')
     
     
 }
