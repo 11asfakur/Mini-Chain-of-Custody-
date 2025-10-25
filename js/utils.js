@@ -20,11 +20,13 @@ async function generateHash(file) {
             const timeStamp = Date.now();
             const randomNum = Math.random();
             
+
             // SHA-256 simulation
             const combined1 = data.substring(0, 1000) + timeStamp;
             const encoded1 = btoa(combined1);
             const sha256 = encoded1.substring(0, 64).toUpperCase();
             
+
             // MD5 simulation
             const combined2 = data.substring(0, 500) + randomNum;
             const encoded2 = btoa(combined2);
@@ -60,7 +62,7 @@ function showPage(pageId) {
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => page.classList.remove('active'));
     document.getElementById(pageId + '-page').classList.add('active');
-    
+
        // Update navigation
     const navBtns = document.querySelectorAll('.nav-btn');
     navBtns.forEach(btn => {
