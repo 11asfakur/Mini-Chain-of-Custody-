@@ -1,0 +1,55 @@
+<h2>Perform Action on Evidence</h2>
+<div class="card">
+  <div class="form-group">
+    <label>Select Evidence *</label>
+    <select id="action-evidence">
+      <option value="">Choose evidence</option>
+    </select>
+    <p class="small text-muted">Only your evidence is shown</p>
+  </div>
+
+  <div class="form-group">
+    <label>Action Type *</label>
+    <select id="action-type">
+      <option value="">Select action</option>
+      <option value="Analysis">Analysis</option>
+      <option value="Autopsy">Autopsy</option>
+      <option value="Verification">Verification</option>
+      <option value="Review">Review</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Notes</label>
+    <textarea
+      id="action-notes"
+      rows="4"
+      placeholder="Add any notes about this action..."
+    ></textarea>
+  </div>
+
+  <div class="info-box">
+    <p class="small bold">What are these actions?</p>
+    <p class="extra-small">
+      <strong>Analysis:</strong> Examining the evidence in detail
+    </p>
+    <p class="extra-small">
+      <strong>Autopsy:</strong> Deep forensic investigation
+    </p>
+    <p class="extra-small">
+      <strong>Verification:</strong> Confirming evidence integrity
+    </p>
+    <p class="extra-small">
+      <strong>Review:</strong> General review of evidence
+    </p>
+  </div>
+
+  <div class="form-actions">
+    <button class="btn btn-primary" onclick="performAction()">
+      Perform Action
+    </button>
+    <button class="btn btn-secondary" onclick="showPage('evidence')">
+      Cancel
+    </button>
+  </div>
+</div>
