@@ -1,34 +1,46 @@
 <div class="login-container">
     <div class="login-box">
+        <div class="auth-icon">
+            <span>🛡️</span>
+        </div>
         
-        <div class="lock-icon">🔒</div>
         <h1>Chain of Custody</h1>
         <p class="subtitle">Evidence Management System</p>
         
-
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" id="login-email" placeholder="Enter your email">
-        </div>
+        <form onsubmit="handleLogin(); return false;">
+            <div class="form-group">
+                <label>Email</label>
+                <div class="input-with-icon">
+                    <span class="input-icon">✉️</span>
+                    <input 
+                        type="email" 
+                        id="login-email" 
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Password</label>
+                <div class="input-with-icon">
+                    <span class="input-icon">🔒</span>
+                    <input 
+                        type="password" 
+                        id="login-password" 
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+            </div>
+            
+            <button type="submit" class="auth-btn">
+                Login →
+            </button>
+        </form>
         
-
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" id="login-password" placeholder="Enter your password">
+        <div class="auth-footer">
+            <p>Don't have an account? <a href="#" onclick="showRegister(); return false;">Create Account</a></p>
         </div>
-
-        
-        <button onclick="handleLogin()" class="btn btn-primary btn-block">Login</button>
-
-        
-        <div class="text-center">
-            <p class="small">Don't have an account? 
-                <a href="#" onclick="showRegister()">Create Account</a>
-
-            </p>
-
-        </div>
-
     </div>
-
 </div>
