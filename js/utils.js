@@ -61,7 +61,7 @@ function showPage(pageId) {
     pages.forEach(page => page.classList.remove('active'));
     document.getElementById(pageId + '-page').classList.add('active');
     
-    // Update navigation - only if called from nav button click
+       // Update navigation
     const navBtns = document.querySelectorAll('.nav-btn');
     navBtns.forEach(btn => {
         if (btn.getAttribute('onclick')?.includes(pageId)) {
