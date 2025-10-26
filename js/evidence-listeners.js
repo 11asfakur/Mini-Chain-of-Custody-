@@ -10,6 +10,7 @@ db.collection('evidence').orderBy('uploaded', 'desc').onSnapshot(snapshot => {
         id: doc.id,
         ...doc.data()
     }));
+     
     
     // Refresh evidence page if active
     const evidencePage = document.getElementById('evidence-page');
