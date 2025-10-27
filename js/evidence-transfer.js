@@ -16,6 +16,7 @@ async function showTransferEvidence()
 
     
     // Populate evidence dropdown (only user's evidence)
+    
     const evidenceSelect = document.getElementById('transfer-evidence');
     evidenceSelect.innerHTML = '<option value="">Choose evidence</option>';
     
@@ -30,12 +31,14 @@ const myEvidence = allEvidence.filter(e => e.ownerUid === currentUser.uid);
       ;
     
     // Populate recipient dropdown
+    
     const recipientSelect = document.getElementById('transfer-to');
     recipientSelect.innerHTML = '<option value="">Select recipient</option>';
 
 
     const investigators = allUsers.filter(u => 
         u.role === 'Investigator' && u.uid !== currentUser.uid
+                                          
     );
   
     
