@@ -1,0 +1,52 @@
+<h2>Transfer Evidence</h2>
+
+<div class="card">
+  
+    <div class="form-group">
+      
+        <label>Select Evidence *</label>
+        <select id="transfer-evidence">
+            <option value="">Choose evidence</option>
+        </select>
+      
+        <p class="small text-muted">Only your evidence is shown</p>
+      
+    </div>
+
+  
+    
+    <div class="form-group">
+        <label>Transfer To *</label>
+        <select id="transfer-to">
+            <option value="">Select recipient</option>
+        </select>
+      
+    </div>
+  
+    
+    <div id="recipient-details" style="display:none;" class="info-box">
+        <p class="small bold">Recipient Details:</p>
+        <div id="recipient-info"></div>
+    </div>
+  
+    
+    <div class="form-group">
+        <label>Reason for Transfer</label>
+        <textarea id="transfer-reason" rows="3" placeholder="Explain why this transfer is necessary"></textarea>
+    </div>
+  
+    
+    <div class="warning-box">
+       
+      <p class="small"><strong>⚠️ Warning:</strong> This transfer willl be permanently recorded in the custody log with all recipient details.</p>
+    
+    </div>
+  
+    
+    <div class="form-actions">
+        <button class="btn btn-success" onclick="transferEvidence()">Transfer Evidence</button>
+        <button class="btn btn-secondary" onclick="showPage('evidence')">Cancel</button>
+      
+    </div>
+  
+</div>
