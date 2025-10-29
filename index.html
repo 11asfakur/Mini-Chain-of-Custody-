@@ -5,70 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chain of Custody System</title>
 
-    <!-- CSS Files -->
+    
     <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/buttons.css" />
+    <!-- Core styles, resets, variables -->
     <link rel="stylesheet" href="css/auth.css" />
+    <!-- Login/register page styling -->
+    <link rel="stylesheet" href="css/buttons.css" />
+    <!-- All button styles -->
     <link rel="stylesheet" href="css/forms.css" />
+    <!-- Input fields, labels, form layouts -->
     <link rel="stylesheet" href="css/navigation.css" />
-    <link rel="stylesheet" href="css/dashboard.css" />
+    <!-- Nav bar and menu styles -->
     <link rel="stylesheet" href="css/cards.css" />
+    <!-- Card components for displaying info -->
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <!-- Dashboard-specific layouts -->
+    <link rel="stylesheet" href="css/evidence.css" />
+    <!-- Evidence list and detail views -->
+    <link rel="stylesheet" href="css/actions.css" />
+    <!-- Action buttons and modals -->
+    <link rel="stylesheet" href="css/logs.css" />
+    <!-- Log table and entry styles -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Mobile/tablet breakpoints -->
   </head>
   <body>
-    <!-- Login Screen -->
+ 
+
+    <!-- Login page - this is what users see first -->
     <div id="login-screen" class="screen active"></div>
 
-    <!-- Registration Screen -->
+    <!-- Registration form - shown when user clicks "Create Account" -->
     <div id="register-screen" class="screen"></div>
 
-    <!-- Main Application -->
+    <!-- Main application container - the actual app lives here -->
     <div id="app-screen" class="screen">
-      <!-- App Header -->
+      <!-- Top bar with logo, user info, logout button, etc. -->
       <header id="app-header" class="app-header"></header>
 
-      <!-- App Navigation -->
+      <!-- Side navigation or main menu - links to different sections -->
       <nav id="app-navigation" class="app-nav"></nav>
 
-      <!-- Main Content Area -->
+      <!-- Main content area - everything happens in here -->
       <main class="container main-content">
-        <!-- Dashboard Page -->
+        <!-- Dashboard - overview page, shows stats and recent activity -->
         <div id="dashboard-page" class="page active"></div>
 
-        <!-- Other pages will be added in upcoming days -->
+        <!-- Cases list - all the cases in the system -->
+        <div id="cases-page" class="page"></div>
+
+        <!-- Individual case view - details for one specific case -->
+        <div id="case-details-page" class="page"></div>
+
+        <!-- Create new case form -->
+        <div id="create-case-page" class="page"></div>
+
+        <!-- Evidence inventory - list of all evidence items -->
+        <div id="evidence-page" class="page"></div>
+
+        <!-- Upload new evidence - forms for adding evidence to a case -->
+        <div id="upload-evidence-page" class="page"></div>
+
+        <!-- Transfer custody - move evidence between officers/locations -->
+        <div id="transfer-evidence-page" class="page"></div>
+
+        <!-- Perform actions - analyze, examine, or process evidence -->
+        <div id="perform-action-page" class="page"></div>
+
+        <!-- Single evidence log - complete history of one evidence item -->
+        <div id="evidence-log-page" class="page"></div>
+
+        <!-- System-wide logs - audit trail for everything -->
+        <div id="logs-page" class="page"></div>
       </main>
     </div>
 
-    <!-- Firebase CDN -->
+    <!-- 
+        Firebase CDN imports - using compat version for easier syntax.
+        These need to load before our custom JS files run.
+    -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
 
-    <!-- Our JavaScript Files -->
+    <!-- Our Firebase configuration (API keys, project ID, etc.) -->
     <script src="js/firebase-config.js"></script>
+
+    <!-- Helper functions used throughout the app -->
     <script src="js/utils.js"></script>
+
     <script src="js/html-loader.js"></script>
 
     <script>
-      // Load all HTML partials first
+      // Start by loading all the HTML chunks
       loadAllHTML().then(() => {
-        console.log("✅ All HTML partials loaded!");
+        
 
-        // Load JavaScript files in order
-        loadScript("js/app.js")
-          .then(() => loadScript("js/auth.js"))
+        // Now load the JavaScript in order - each file depends on the previous ones.
+        // This chain ensures everything loads in the right sequence.
+        loadScript("js/auth.js") // Login/logout functionality
+          .then(() => loadScript("js/cases.js")) // Case management features
+          .then(() => loadScript("js/evidence-listeners.js")) // Event handlers for evidence
+          .then(() => loadScript("js/evidence-upload.js")) // File upload logic
+          .then(() => loadScript("js/evidence-transfer.js")) // Transfer custody functions
+          .then(() => loadScript("js/evidence-actions.js")) // Actions on evidence items
+          .then(() => loadScript("js/evidence-display.js")) // Rendering evidence on screen
+          .then(() => loadScript("js/evidence-logs.js")) // Log viewing and filtering
+          .then(() => loadScript("js/evidence-report.js")) // Generate reports
+          .then(() => loadScript("js/app.js")) // Main app controller - ties it all together
           .then(() => {
-            console.log("🎉 App fully initialized!");
+            console.log("App ok");
           });
       });
 
-      // Helper to load scripts dynamically
+      // Helper to load scripts dynamically and know when they're done
       function loadScript(src) {
         return new Promise((resolve, reject) => {
           const script = document.createElement("script");
           script.src = src;
-          script.onload = resolve;
-          script.onerror = reject;
+          script.onload = resolve; // Script loaded successfully
+          script.onerror = reject; // Something went wrong
           document.body.appendChild(script);
         });
       }
