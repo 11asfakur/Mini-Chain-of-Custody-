@@ -1,13 +1,13 @@
 /* Authentication Styles */
 
-
+/*changing the backrgound*/
 
 .login-container {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #d5e4e6 0%, #d5e4e6 100%);
     padding: 1rem;
 }
 
@@ -28,10 +28,11 @@
     margin-bottom: 1rem;
 }
 
+/*h1 color has changed*/
 .login-box h1 
 {
     text-align: center;
-    color: #2563eb;
+    color: #4687bd;
     margin-bottom: 0.5rem;
     font-size: 1.875rem;
 }
